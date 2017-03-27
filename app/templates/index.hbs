@@ -4,13 +4,21 @@
     <div class="header">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <button {{action 'bookListFormShow'}}>New Rental</button>
+          <button {{action 'bookListFormShow'}}>All books</button>
           <button {{action 'addNewBook'}}>addBook</button>
         </div>
         </div>
     </div>
     <div class="body">
-
+      {{#if addBook}}
+      <ul>
+        {{#each model as |rental|}}
+        {{rental-tile rental=rental destroyBook="destroyBook"}}
+        {{/each}}
+      </ul>
+  <!-- adding new rental -->
+      {{new-book saveBook2="saveBook3"}}
+      {{/if}}
     </div>
   </div>
 </body>

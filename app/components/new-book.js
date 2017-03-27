@@ -2,14 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   addBook: false;
-  bookList: false;
 
   actions: {
     addNewBook(){
       this.set('addBook', true)
-    }
-    addNewBook(){
-      this.set('bookList', true)
     }
     saveBook1(){
       params = {
@@ -18,5 +14,7 @@ export default Ember.Component.extend({
         title: this.get('title') ? this.get('title'): '',
       }
     }
+    this.set('addBook', false);
+    this.sendAction('saveBook2', params);
   }
 });
