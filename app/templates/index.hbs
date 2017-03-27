@@ -12,8 +12,8 @@
     <div class="body">
       {{#if addBook}}
       <ul>
-        {{#each model as |rental|}}
-        {{rental-tile rental=rental destroyBook="destroyBook"}}
+        {{#each model as |book|}}
+        {{book-pile book=book destroyBook="destroyBook"}}
         {{/each}}
       </ul>
   <!-- adding new rental -->

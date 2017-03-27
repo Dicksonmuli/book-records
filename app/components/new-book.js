@@ -1,20 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  addBook: false;
+  addBook: false,
 
   actions: {
     addNewBook(){
       this.set('addBook', true)
-    }
+    },
     saveBook1(){
-      params = {
+      var params = {
         author: this.get('author') ? this.get('author'): '',
         year: this.get('year') ? this.get('year'): '',
-        title: this.get('title') ? this.get('title'): '',
-      }
+        title: this.get('title') ? this.get('title'): ''
+      };
+      this.set('addBook', false);
+      this.sendAction('saveBook2', params);
     }
-    this.set('addBook', false);
-    this.sendAction('saveBook2', params);
   }
 });
