@@ -1,0 +1,13 @@
+{{#if addBook}}
+<div class="">
+  <form class="" action="index.html" method="post">
+    <label for=""></label>
+    {{input value=author id="author" class="form-control"}}
+    <label for=""></label>
+    {{input value=year id="year" class="form-control"}}
+    <label for=""></label>
+    {{input value=title id="title" class="form-control"}}
+    <button type="button" {{action 'saveBook'}} class="btn" name="button"></button>
+  </form>
+</div>
+{{/if}}
