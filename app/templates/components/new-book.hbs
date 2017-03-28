@@ -1,13 +1,23 @@
-{{#if addBook}}
+{{#if addNewBook}}
 <div class="">
-  <form class="" action="index.html" method="post">
-    <label for=""></label>
-    {{input value=author id="author" class="form-control"}}
-    <label for=""></label>
-    {{input value=year id="year" class="form-control"}}
-    <label for=""></label>
-    {{input value=title id="title" class="form-control"}}
+  <form class="form-group" action="index.html" method="post">
+    <div class="">
+      <label for="author"><em>Author</em></label>
+      {{input value=author id="author" class="form-control"}}
+    </div>
+    <div class="">
+      <label for="year"><em>Year</em></label>
+      {{input value=year id="year" class="form-control"}}
+    </div>
+    <div class="">
+      <label for="title"><em>Title</em></label>
+      {{input value=title id="title" class="form-control"}}
+    </div>
     <button type="button" {{action 'saveBook1'}} class="btn" name="button">Save</button>
+
   </form>
 </div>
+{{else}}
+<img src="http://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg" style="height:250px; width: 320px" {{action 'hideImage'}}>
+<button {{action 'bookFormShow'}}>Add a book</button>
 {{/if}}

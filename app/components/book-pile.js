@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
     deleteBook(book){
       if(confirm('Are you sure you want to delete this Book?')){
-        this.sendAction('destroyBook', rental)
+        this.sendAction('destroyRecord', book)
       }
     }
   }

@@ -6,18 +6,19 @@ model(){
   return this.store.findAll('book');
 },
 
-  addBook: true,
+  addBook: false,
   //actions
   actions:{
+    
     addNewBook(){
       this.set('addBook', true);
     },
-    saveRental3(params){
-      var newBook = this.store.createRecord('book', paras);
+    saveBook3(params){
+      var newBook = this.store.createRecord('book', params);
       newBook.save();
       this.transitionTo('index');
     },
-    destroyRental(book){
+    destroyBook(book){
       book.destroyRecord();
       this.transitionTo('index');
     }

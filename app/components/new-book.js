@@ -1,11 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  addBook: false,
+  addNewBook: false,
 
   actions: {
-    addNewBook(){
-      this.set('addBook', true)
+    hideImage: function () {
+      this.set('addNewBook', false);
+    },
+    bookFormShow(){
+      this.set('addNewBook', true)
     },
     saveBook1(){
       var params = {
@@ -13,7 +16,7 @@ export default Ember.Component.extend({
         year: this.get('year') ? this.get('year'): '',
         title: this.get('title') ? this.get('title'): ''
       };
-      this.set('addBook', false);
+      this.set('addNewBook', false);
       this.sendAction('saveBook2', params);
     }
   }

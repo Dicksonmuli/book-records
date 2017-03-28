@@ -1,24 +1,24 @@
+
+
+
 <html>
 <body>
   <div class="wrapper">
     <div class="header">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <button {{action 'bookListFormShow'}}>All books</button>
-          <button {{action 'addNewBook'}}>addBook</button>
-        </div>
-        </div>
+
     </div>
     <div class="body">
-      {{#if addBook}}
       <ul>
         {{#each model as |book|}}
-        {{book-pile book=book destroyBook="destroyBook"}}
+        {{book-pile book=book destroyBook='destroyBook'}}
         {{/each}}
       </ul>
   <!-- adding new rental -->
-      {{new-book saveBook2="saveBook3"}}
-      {{/if}}
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+
+      </div>
+    </div>
     </div>
   </div>
 </body>
